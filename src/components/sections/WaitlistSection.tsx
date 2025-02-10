@@ -3,7 +3,7 @@
 import { motion, MotionValue } from "framer-motion";
 import { AnimatedHeading } from "@/components/ui/text/AnimatedHeading";
 import { MailingListForm } from "@/components/ui/mailing/MailingListForm";
-import { Sparkles } from "lucide-react";
+import { Rocket, Users } from "lucide-react";
 
 interface WaitlistSectionProps {
   opacity: MotionValue<number>;
@@ -18,7 +18,7 @@ export function WaitlistSection({ opacity, y }: WaitlistSectionProps) {
     >
       <div className="text-center max-w-2xl">
         <AnimatedHeading 
-          text="Be First to Create"
+          text="Join the Web3 Builder Community"
           size="lg"
           className="mb-4 bg-gradient-to-r from-[#fff7ad] via-[#ffd1fa] to-[#ffa9f9] text-transparent bg-clip-text"
         />
@@ -28,7 +28,7 @@ export function WaitlistSection({ opacity, y }: WaitlistSectionProps) {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-[#94A3B8] text-lg mb-8"
         >
-          Join our waitlist to get early access to AI-powered logo generation and exclusive launch benefits
+          Be among the first to access our platform and connect with talented Web3 builders and innovative projects
         </motion.p>
       </div>
       
@@ -42,15 +42,26 @@ export function WaitlistSection({ opacity, y }: WaitlistSectionProps) {
         <MailingListForm className="relative z-10 bg-[#0A192F]/30 backdrop-blur-sm rounded-lg border border-[#ffd1fa]/20 p-6" />
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="flex items-center gap-2 text-[#ffd1fa]/60 text-sm mt-4"
-      >
-        <Sparkles className="w-4 h-4" />
-        <span>Early access members get 5 free logo generations</span>
-      </motion.div>
+      <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-[#ffd1fa]/60 text-sm mt-4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="flex items-center gap-2"
+        >
+          <Rocket className="w-4 h-4" />
+          <span>Early access to project creation</span>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="flex items-center gap-2"
+        >
+          <Users className="w-4 h-4" />
+          <span>Connect with verified builders</span>
+        </motion.div>
+      </div>
     </motion.div>
   );
 } 

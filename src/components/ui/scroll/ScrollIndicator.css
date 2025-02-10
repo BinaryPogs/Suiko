@@ -1,11 +1,8 @@
 .scroll-indicator-wrapper {
-  position: fixed;
-  bottom: 48px;
-  left: 50%;
-  transform: translate3d(-50%, 0, 0);
-  z-index: 50;
+  position: relative;
   width: 20px;
   height: 40px;
+  margin: 0 auto;
   will-change: transform;
 }
 
