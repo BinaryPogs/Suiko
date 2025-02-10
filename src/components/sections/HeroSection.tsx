@@ -64,17 +64,30 @@ export function HeroSection({ opacity }: HeroSectionProps) {
             <Image 
               src="/suiko.svg" 
               alt="Suiko Logo" 
-              width={120} 
-              height={120}
-              className="drop-shadow-xl transition-transform duration-300 group-hover:scale-110"
+              width={160} 
+              height={160}
+              className="drop-shadow-2xl transition-transform duration-300 group-hover:scale-110"
+              priority
             />
+            <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-[#fff7ad]/20 to-[#ffa9f9]/20 blur-xl rounded-full" />
           </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-4xl md:text-6xl font-bold mb-4 text-center"
+          >
+            <span className="bg-gradient-to-r from-[#fff7ad] via-[#ffd1fa] to-[#ffa9f9] text-transparent bg-clip-text">
+              Suiko
+            </span>
+          </motion.h1>
 
           <AnimatedHeading 
             text="Connect, Create, and Build in Web3"
-            size="xl"
-            delay={0.3}
-            className="mb-4 text-center bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-300 text-transparent bg-clip-text font-bold tracking-tight"
+            size="lg"
+            delay={0.6}
+            className="mb-4 text-center text-gray-300"
           />
           
           <AnimatedHeading 

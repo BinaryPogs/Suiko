@@ -2,6 +2,14 @@ import { font } from './fonts'
 import "./globals.css";
 import { Background } from "@/components/ui/background/Background";
 
+export const metadata = {
+  title: 'Suiko - Web3 Builder Community',
+  description: 'The First Decentralized Talent Platform on Sui',
+  icons: {
+    icon: '/suiko.svg',
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
