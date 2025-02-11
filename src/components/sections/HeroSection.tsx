@@ -4,6 +4,7 @@ import { motion, MotionValue } from "framer-motion";
 import { AnimatedHeading } from "@/components/ui/text/AnimatedHeading";
 import { ScrollIndicator } from "@/components/ui/scroll/ScrollIndicator";
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, useEffect } from "react";
 
 interface HeroSectionProps {
@@ -55,33 +56,36 @@ export function HeroSection({ opacity }: HeroSectionProps) {
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center h-screen">
         <div className="flex-1 flex flex-col items-center justify-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.2 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2 }}
-            className="mb-8 relative group"
-          >
-            <Image 
-              src="/suiko.svg" 
-              alt="Suiko Logo" 
-              width={160} 
-              height={160}
-              className="drop-shadow-2xl transition-transform duration-300 group-hover:scale-110"
-              priority
-            />
-            <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-[#fff7ad]/20 to-[#ffa9f9]/20 blur-xl rounded-full" />
-          </motion.div>
+          <Link href="https://suiko-app.vercel.app/" className="mb-8 relative group">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.2 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2 }}
+            >
+              <Image 
+                src="/suiko.svg" 
+                alt="Suiko Logo" 
+                width={160} 
+                height={160}
+                className="drop-shadow-2xl transition-transform duration-300 group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-[#fff7ad]/20 to-[#ffa9f9]/20 blur-xl rounded-full" />
+            </motion.div>
+          </Link>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-4xl md:text-6xl font-bold mb-4 text-center"
-          >
-            <span className="bg-gradient-to-r from-[#fff7ad] via-[#ffd1fa] to-[#ffa9f9] text-transparent bg-clip-text">
-              Suiko
-            </span>
-          </motion.h1>
+          <Link href="https://suiko-app.vercel.app/" className="block mb-4">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-4xl md:text-6xl font-bold text-center"
+            >
+              <span className="bg-gradient-to-r from-[#fff7ad] via-[#ffd1fa] to-[#ffa9f9] text-transparent bg-clip-text">
+                Suiko
+              </span>
+            </motion.h1>
+          </Link>
 
           <AnimatedHeading 
             text="Connect, Create, and Build in Web3"
@@ -98,27 +102,27 @@ export function HeroSection({ opacity }: HeroSectionProps) {
           />
 
           <div className="flex gap-4">
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2 }}
-              className="px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full text-white font-medium 
-                       shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 
-                       transition-all duration-300 hover:scale-105"
-            >
-              Mint Your Profile
-            </motion.button>
+            <Link href="https://suiko-app.vercel.app/" className="outline-none tap-highlight-none">
+              <div
+                className="px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full text-white font-medium 
+                         shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 
+                         transition-all duration-300 hover:scale-105 select-none cursor-pointer
+                         active:transform active:scale-95"
+              >
+                Mint Your Profile
+              </div>
+            </Link>
             
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2.2 }}
-              className="px-8 py-3 bg-transparent border border-purple-500 rounded-full text-white font-medium 
-                       shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 
-                       transition-all duration-300 hover:scale-105"
-            >
-              Post a Project
-            </motion.button>
+            <Link href="https://suiko-app.vercel.app/" className="outline-none tap-highlight-none">
+              <div
+                className="px-8 py-3 bg-transparent border border-purple-500 rounded-full text-white font-medium 
+                         shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 
+                         transition-all duration-300 hover:scale-105 select-none cursor-pointer
+                         active:transform active:scale-95"
+              >
+                Post a Project
+              </div>
+            </Link>
           </div>
         </div>
 

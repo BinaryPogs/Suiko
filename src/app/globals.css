@@ -72,3 +72,26 @@ body {
   background-color: rgba(255, 209, 250, 0.3);
   border-radius: 20px;
 }
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+a, button, div[role="button"] {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-user-drag: none;
+}
+
+a:focus,
+button:focus,
+a:active,
+button:active,
+div[role="button"]:active,
+div[role="button"]:focus {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-user-drag: none;
+}
